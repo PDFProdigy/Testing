@@ -26,16 +26,16 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.BadElementException;
 
 
-public class test_0001 
+public class test_0002 
 {
-   public static final String PDF_FILENAME = "test_0001";
+   public static final String PDF_FILENAME = "test_0002";
     
 
-   private static PdfPTable 
+   private static PdfPTable
    createTable()
       throws BadElementException, DocumentException
       {
-         PdfPTable table = new PdfPTable(5); // number of columns
+         PdfPTable table = new PdfPTable(6); // number of columns
 
          // Define the default design of the table cells
          table.getDefaultCell().setBorderColor(BaseColor.BLACK);
@@ -43,21 +43,34 @@ public class test_0001
          table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_RIGHT);
          table.getDefaultCell().setBorderWidth(1);
 
-         // First row
+         // The first row of the table is the header
+         table.addCell("");
+         table.addCell("Column 1");
+         table.addCell("Column 2");
+         table.addCell("Column 3");
+         table.addCell("Column 4");
+         table.addCell("Column 5");
+
+         table.setHeaderRows(1);
+
+         // The second row of the table begins the row header
+         table.addCell("Row 1");
          table.addCell("11");
          table.addCell("12");
          table.addCell("13");
          table.addCell("14");
          table.addCell("15");
 
-         // Second row
+         // The third row of the table begins the row header
+         table.addCell("Row 2");
          table.addCell("21");
          table.addCell("22");
          table.addCell("23");
          table.addCell("24");
          table.addCell("25");
 
-         // Third row
+         // The fourth row of the table begins the row header
+         table.addCell("Row 3");
          table.addCell("31");
          table.addCell("32");
          table.addCell("33");
@@ -77,7 +90,7 @@ public class test_0001
          writer.setPdfVersion(__pdf_version);
 
          document.open();
-        
+         
          // Set the metadata
          document.addTitle(PDF_FILENAME);
          document.addSubject("Testing table extraction from PDF file");
