@@ -1,11 +1,11 @@
 test-0001
 =========
 
-"test-0001" is for testing table extraction with a very simple table with all the lines, no header and no spanning.
+"test-0001" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table with all the lines, no header and no spanning.
 
 This folder contains 6 PDF files with this _testing table_, one file for each PDF version ([from version 1.2 to 1.7](http://en.wikipedia.org/wiki/Portable_Document_Format)).
 
-Those PDF files were created by a Java program (_Cf._ test-XXXX.java in this folder) developped thanks to the Java library IText ([itextpdf.com](http://itextpdf.com/))
+Those PDF files were created by a Java program (_Cf._ test-XXXX.java in this folder) developped thanks to the ([Java library IText](http://itextpdf.com/))
 
 File list of this folder: 
 
