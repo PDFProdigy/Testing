@@ -6,8 +6,8 @@
  * The jar file can be retrieved from the maven repository : http://mvnrepository.com/artifact/com.itextpdf/itextpdf
  * The IText API documentation is available here : http://api.itextpdf.com/itext/index.html?overview-summary.html
  *
- * To compile : javac -cp itextpdf-5.5.0.jar test-xxxx.java
- * To run     : java  -cp itextpdf-5.5.0.jar test-xxxx
+ * To compile : javac -cp ..\..\Lib\itextpdf-5.5.0.jar   test_xxxx.java
+ * To run     : java  -cp ..\..\Lib\itextpdf-5.5.0.jar;. test_xxxx
  */
 
 

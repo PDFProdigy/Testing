@@ -26,43 +26,57 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.BadElementException;
 
 
-public class test_0001 
+public class test_0003 
 {
-   public static final String PDF_FILENAME = "test_0001";
+   public static final String PDF_FILENAME = "test_0003";
     
 
-   private static PdfPTable 
+   private static PdfPTable
    createTable()
       throws BadElementException, DocumentException
       {
-         PdfPTable table = new PdfPTable(5); // number of columns
+         PdfPTable table = new PdfPTable(4); // number of columns
 
          // Define the default design of the table cells
          table.getDefaultCell().setBorderColor(BaseColor.BLACK);
          table.getDefaultCell().setPadding(4);
-         table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_RIGHT);
+         table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
          table.getDefaultCell().setBorderWidth(1);
 
-         // First row
-         table.addCell("11");
-         table.addCell("12");
-         table.addCell("13");
-         table.addCell("14");
-         table.addCell("15");
+         PdfPCell cell;
 
-         // Second row
-         table.addCell("21");
-         table.addCell("22");
-         table.addCell("23");
-         table.addCell("24");
-         table.addCell("25");
+         // The first row of the table
+         table.addCell("no spanning");
 
-         // Third row
-         table.addCell("31");
-         table.addCell("32");
-         table.addCell("33");
-         table.addCell("34");
-         table.addCell("35");
+         cell = new PdfPCell(new Phrase("spanning row_span=2 col_span=2"));
+         cell.setRowspan(2);
+         cell.setColspan(2);
+         cell.setBorderColor(BaseColor.BLACK);
+         cell.setPadding(4);
+         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+         cell.setBorderWidth(1);
+         table.addCell(cell);
+
+         cell = new PdfPCell(new Phrase("spanning row_span=3 col_span=1"));
+         cell.setRowspan(3);
+         cell.setBorderColor(BaseColor.BLACK);
+         cell.setPadding(4);
+         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+         cell.setBorderWidth(1);
+         table.addCell(cell);
+
+         // The second row of the table
+         table.addCell("no spanning");
+
+         // The third row of the table begins the row header
+
+         cell = new PdfPCell(new Phrase("spanning row_span=1 col_span=3"));
+         cell.setColspan(3);
+         cell.setBorderColor(BaseColor.BLACK);
+         cell.setPadding(4);
+         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+         cell.setBorderWidth(1);
+         table.addCell(cell);
 
          return(table);
       }
@@ -77,7 +91,7 @@ public class test_0001
          writer.setPdfVersion(__pdf_version);
 
          document.open();
-        
+         
          // Set the metadata
          document.addTitle(PDF_FILENAME);
          document.addSubject("Testing table extraction from PDF file");
