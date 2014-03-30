@@ -1,9 +1,9 @@
-test_0006
+test_0007
 =========
 
-"test_0006" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table (no headers and no spanning cells) but there is no visual border to the cells. Instead, some of the cells'background are painted in light gray. 
-In fact, when I say "no visual border", the borders are still here but their colors are the same as the background cell.  
-So, the borders are technically present. 
+"test_0007" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table (no headers and no spanning cells) but there is no border to the cells.  
+Instead, some of the cells'background are painted in light gray. 
+However, unlike "test_0006", the borders were really removed from the table in this test.  
 
 ![test_0006 screenshot](test_0006.png)
 
