@@ -1,9 +1,9 @@
-test-0001
+test-0004
 =========
 
-"test-0001" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table with all the borders, no header and no spanning.
+"test-0004" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table with all the borders, headers and with some spanning cells.
 
-![test_0001 screenshot](test_0001.png)
+![test_0004 screenshot](test_0004.png)
 
 This folder contains 6 PDF files with this _testing table_, one file for each PDF version ([from version 1.2 to 1.7](http://en.wikipedia.org/wiki/Portable_Document_Format)).
 
