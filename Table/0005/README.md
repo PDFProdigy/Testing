@@ -1,9 +1,9 @@
-test_0002
+test_0005
 =========
 
-"test_0002" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table with all the borders, simple headers (for columns and rows) but no spanning.
+"test_0005" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table which has all the borders, headers and some spanning cells. The page layout is landscape mode whereas is in portrait mode for "test_004".
 
-![test_0002 screenshot](test_0002.png)
+![test_0005 screenshot](test_0005.png)
 
 This folder contains 6 PDF files with this _testing table_, one file for each PDF version ([from version 1.2 to 1.7](http://en.wikipedia.org/wiki/Portable_Document_Format)).
 

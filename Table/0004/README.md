@@ -1,7 +1,7 @@
-test-0004
+test_0004
 =========
 
-"test-0004" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table with all the borders, headers and with some spanning cells.
+"test_0004" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table with all the borders, headers and with some spanning cells.
 
 ![test_0004 screenshot](test_0004.png)
 

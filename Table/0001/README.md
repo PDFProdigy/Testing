@@ -1,7 +1,7 @@
-test-0001
+test_0001
 =========
 
-"test-0001" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table with all the borders, no header and no spanning.
+"test_0001" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table with all the borders, no header and no spanning.
 
 ![test_0001 screenshot](test_0001.png)
 
