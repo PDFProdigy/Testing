@@ -3,9 +3,10 @@ test_0007
 
 "test_0007" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table (no headers and no spanning cells) but there is no border to the cells.  
 Instead, some of the cells'background are painted in light gray. 
-However, unlike "test_0006", the borders were really removed from the table in this test.  
+However, unlike ["test_0006"](../test_0006), the borders were really removed from the table in this test.  
+Despite removing the border, you can see a little white line separating each gray cell. This kind of clue for helping table extraction is removed in ["test_0008"](../test_0008).
 
-![test_0006 screenshot](test_0006.png)
+![test_0007 screenshot](test_0007.png)
 
 This folder contains 6 PDF files with this _testing table_, one file for each PDF version ([from version 1.2 to 1.7](http://en.wikipedia.org/wiki/Portable_Document_Format)).
 
