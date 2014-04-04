@@ -45,7 +45,7 @@ public class test_0009
          float cell_width  = 40f;
          float cell_height = 40f;
 
-         // the gap size between each cell's border.
+         // the gap size between each cell borders.
          float separator = 3f;
          for (int i=0; i <= 5; i++)
             {
