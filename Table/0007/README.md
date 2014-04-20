@@ -10,7 +10,7 @@ Despite removing the border, you can see a little white line separating each gra
 
 This folder contains 6 PDF files with this _testing table_, one file for each PDF version ([from version 1.2 to 1.7](http://en.wikipedia.org/wiki/Portable_Document_Format)).
 
-Those PDF files were created by a Java program (_Cf._ test_XXXX.java in this folder) developped thanks to the ([Java library IText](http://itextpdf.com/))
+Those PDF files were created by a Java program (_Cf._ test_XXXX.java in this folder) developped thanks to the ([IText Java library](http://itextpdf.com/))
 
 File list of this folder: 
 

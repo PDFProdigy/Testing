@@ -50,7 +50,7 @@ public class test_0008
          canvas.setColorStroke(BaseColor.LIGHT_GRAY);
          canvas.setColorFill(BaseColor.LIGHT_GRAY);
 
-         // Fill a row with gray very two rows
+         // Fill a row with gray every two rows
          for (int i=0; i < nb_rows; i+=2)
             {
                canvas.rectangle(origin_x, origin_y+cell_height*i, cell_width*nb_columns, cell_height);

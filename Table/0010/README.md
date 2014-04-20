@@ -2,13 +2,13 @@ test_0010
 =========
 
 "test_0010" is for testing table extraction in [PDFProdigy](http://www.pdfprodigy.com) with a very simple table with all the borders, no header and no spanning.  
-However, the lines of each cell border do not connect to each other (like in [test_0009](../test_0009/)), and there are two lines of text (aligned to the right) in each cell (separated by a newline).
+However, the lines of each cell border do not connect to each other (as in [test_0009](../test_0009/)), and there are two lines of text (aligned to the right) in each cell (separated by a newline).
 
 ![test_0010 screenshot](test_0010.png)
 
 This folder contains 6 PDF files with this _testing table_, one file for each PDF version ([from version 1.2 to 1.7](http://en.wikipedia.org/wiki/Portable_Document_Format)).
 
-Those PDF files were created by a Java program (_Cf._ test_XXXX.java in this folder) developped thanks to the ([Java library IText](http://itextpdf.com/))
+Those PDF files were created by a Java program (_Cf._ test_XXXX.java in this folder) developped thanks to the ([IText Java library](http://itextpdf.com/))
 
 File list of this folder: 
 
