@@ -1,5 +1,5 @@
 /**
- * This program creates a PDF file with a table in different PDF version (1.2 to 1.7).
+ * This program creates a PDF file (version 1.7) with a table.
  * The purpose of this PDF file is to test and control the efficacity of table extraction from PDF documents.
  *
  * This code was developped thanks to the Java library IText (http://itextpdf.com/)
@@ -30,7 +30,7 @@ import com.itextpdf.text.pdf.BaseFont;
 public class test_0011
 {
    public static final String PDF_FILENAME = "test_0011";
-    
+
 
    private static void
    writeTable(PdfWriter __writer)
@@ -56,7 +56,7 @@ public class test_0011
                            // Horizontal line
                            canvas.moveTo( origin_x+separator+    i*cell_width, origin_y+j*cell_height);
                            canvas.lineTo( origin_x-separator+(i+1)*cell_width, origin_y+j*cell_height);
-                           canvas.stroke();                           
+                           canvas.stroke();
                         }
 
                      if (j < 3)
@@ -71,27 +71,19 @@ public class test_0011
 
          BaseFont bf = BaseFont.createFont();
 
-         String text_line2[] = { "first", "", "", "", "fifth"};
-         String text_line3[] = { "nothing", "", "", "", ""};
-
          canvas.beginText();
          canvas.setFontAndSize(bf, 10);
          for (int i=0; i<5; i++)
             {
                for (int j=0; j<3; j++)
                   {
+                     canvas.showTextAligned(Element.ALIGN_LEFT, "Text of the cell",   origin_x+4+cell_width*i, origin_y+cell_height*j+40, 0);
 
-                     canvas.showTextAligned(Element.ALIGN_RIGHT, "Cell = ("+(3-j)+","+(i+1)+")",  origin_x+cell_width*i+cell_width/1.1f, origin_y+cell_height*j+(cell_height/4)*3, 0);
-
-                     if (text_line2[i].length() > 0)
+                     if ( ( (i == 0) || (i == 4) ) && ( (j == 0) || (j == 2) ) )
                         {
-                           canvas.showTextAligned(Element.ALIGN_RIGHT, text_line2[i],             origin_x+cell_width*i+cell_width/1.1f, origin_y+cell_height*j+(cell_height/4)*2, 0);
-                        }                     
-
-                     if (text_line3[i].length() > 0)
-                        {
-                           canvas.showTextAligned(Element.ALIGN_RIGHT, text_line3[i],             origin_x+cell_width*i+cell_width/1.1f, origin_y+cell_height*j+(cell_height/4)*1, 0);
-                        }                     
+                           canvas.showTextAligned(Element.ALIGN_LEFT, "from column "+(i+1), origin_x+4+cell_width*i, origin_y+cell_height*j+30, 0);
+                           canvas.showTextAligned(Element.ALIGN_LEFT, "and row "+(3-j),     origin_x+4+cell_width*i, origin_y+cell_height*j+20, 0);
+                        }
                   }
             }
          canvas.endText();
@@ -101,15 +93,15 @@ public class test_0011
 
 
    public static void
-   createPDFFile(char __pdf_version)
-      throws DocumentException, IOException 
+   createPDFFile()
+      throws DocumentException, IOException
       {
          Document  document = new Document();
-         PdfWriter writer   = PdfWriter.getInstance(document, new FileOutputStream(PDF_FILENAME+"_v1."+__pdf_version+".pdf"));
-         writer.setPdfVersion(__pdf_version);
+         PdfWriter writer   = PdfWriter.getInstance(document, new FileOutputStream(PDF_FILENAME+".pdf"));
+         writer.setPdfVersion(PdfWriter.VERSION_1_7);
 
          document.open();
-        
+
          // Set the metadata
          document.addTitle(PDF_FILENAME);
          document.addSubject("Testing table extraction from PDF file");
@@ -124,15 +116,10 @@ public class test_0011
       }
 
 
-   public static void 
+   public static void
    main(String[] __args)
-      throws DocumentException, IOException 
+      throws DocumentException, IOException
       {
-         createPDFFile(PdfWriter.VERSION_1_2);
-         createPDFFile(PdfWriter.VERSION_1_3);
-         createPDFFile(PdfWriter.VERSION_1_4);
-         createPDFFile(PdfWriter.VERSION_1_5);
-         createPDFFile(PdfWriter.VERSION_1_6);
-         createPDFFile(PdfWriter.VERSION_1_7);
+         createPDFFile();
       }
 }

@@ -1,5 +1,5 @@
 /**
- * This program creates a PDF file with a table in different PDF version (1.2 to 1.7).
+ * This program creates a PDF file (version 1.7) with a table.
  * The purpose of this PDF file is to test and control the efficacity of table extraction from PDF documents.
  *
  * This code was developped thanks to the Java library IText (http://itextpdf.com/)
@@ -27,10 +27,10 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.pdf.BaseFont;
 
-public class test_0008 
+public class test_0008
 {
    public static final String PDF_FILENAME = "test_0008";
-    
+
 
    private static void
    writeTable(PdfWriter __writer)
@@ -54,7 +54,7 @@ public class test_0008
          for (int i=0; i < nb_rows; i+=2)
             {
                canvas.rectangle(origin_x, origin_y+cell_height*i, cell_width*nb_columns, cell_height);
-               canvas.fillStroke();               
+               canvas.fillStroke();
             }
 
          canvas.setColorFill(BaseColor.BLACK);
@@ -79,15 +79,15 @@ public class test_0008
 
 
    public static void
-   createPDFFile(char __pdf_version)
-      throws DocumentException, IOException 
+   createPDFFile()
+      throws DocumentException, IOException
       {
          Document  document = new Document();
-         PdfWriter writer   = PdfWriter.getInstance(document, new FileOutputStream(PDF_FILENAME+"_v1."+__pdf_version+".pdf"));
-         writer.setPdfVersion(__pdf_version);
+         PdfWriter writer   = PdfWriter.getInstance(document, new FileOutputStream(PDF_FILENAME+".pdf"));
+         writer.setPdfVersion(PdfWriter.VERSION_1_7);
 
          document.open();
-        
+
          // Set the metadata
          document.addTitle(PDF_FILENAME);
          document.addSubject("Testing table extraction from PDF file");
@@ -102,15 +102,10 @@ public class test_0008
       }
 
 
-   public static void 
+   public static void
    main(String[] __args)
-      throws DocumentException, IOException 
+      throws DocumentException, IOException
       {
-         createPDFFile(PdfWriter.VERSION_1_2);
-         createPDFFile(PdfWriter.VERSION_1_3);
-         createPDFFile(PdfWriter.VERSION_1_4);
-         createPDFFile(PdfWriter.VERSION_1_5);
-         createPDFFile(PdfWriter.VERSION_1_6);
-         createPDFFile(PdfWriter.VERSION_1_7);
+         createPDFFile();
       }
 }
